@@ -13,4 +13,4 @@ As the last index of the matrix is entered, the matrices will be explicitly prin
 
 If you are interested in multiplying another set of matrices, the calculator will ask you to enter `yes`. Press ENTER when you are done.
 
-Thank you for using this application. Message me at christopherbiemer@gmail.com with any questions or recommendations for updates in functionality.
+Thank you for using this application. Message me at chrisbmwchi@gmail.com with any questions or recommendations for updates in functionality.
