@@ -5,17 +5,23 @@ def matrixMaker():
     B = []
     #controlled line spacing for clean visibility in the command line; logic instruction messages
     print("")
-    print("This calculator is based on the following logic: ")
+    print("~~~~~~")
     print("")
-    print("A is a matrix with m rows and n columns, B is a matrix with n rows and p columns")
+    print("This calculator will prompt the user to enter two matrices of any chosen dimensions position by position.")
+    print("")
+    print("A is a matrix with m rows and n columns, B is a matrix with n rows and p columns.")
+    print("")
+    print("A x B = C; C will be a matrix with m rows and p columns.")
+    print("")
+    print("Integers are requested for each prompted answers.")
     print("")
 
     #rows for A in AB = C
-    m = int(input("Rows in A --> "))
+    m = int(input("How many rows are there in A? --> "))
     #cols for A and rows for B in AB = C; necessary for these to be equal so no point facilitating user input errors
-    n = int(input("Columns in A & Rows in B --> "))
+    n = int(input("How many columns are in A? How many rows are there in B? --> "))
     #cols for B in AB = C
-    p = int(input("Columns in B --> "))
+    p = int(input("How many columns are there in B? --> "))
 
     #specify which matrix the user is forming
     matrixIndex = 1
@@ -33,7 +39,7 @@ def matrixMaker():
                 colIndex = 1
                 while colIndex <= n:
                     #user inputs the integer at the specified position in matrix A
-                    x = int(input("Integer in matrix A at " + str(rowIndex) + " X " + str(colIndex) + " --> "))
+                    x = int(input("What is the integer in matrix A at row " + str(rowIndex) + ", column " + str(colIndex) + "? --> "))
                     row.append(x)
                     colIndex += 1
                 #add the row to matrix A
@@ -50,7 +56,7 @@ def matrixMaker():
                 colIndex = 1
                 while colIndex <= p:
                     #user inputs the integer at the specified position in matrix B
-                    x = int(input("Integer in matrix B at " + str(rowIndex) + " X " + str(colIndex) + " --> "))
+                    x = int(input("What is the integer in matrix B at row " + str(rowIndex) + ", column " + str(colIndex) + "? --> "))
                     row.append(x)
                     colIndex += 1
                 #add the row to matrix B
@@ -95,13 +101,13 @@ def matrixMultiplier(array1, array2, m, n, p):
     print(C)
     print("")
     #allow the user to repeat for a different set of matrices without exiting the application
-    repeat = input("Enter `yes` if you would like to multiply another pair of matrices; anything else will exit the application --> ")
-    if repeat == "yes":
+    repeat = raw_input("Enter `yes` if you would like to multiply another pair of matrices; anything else will exit the application --> ")
+    repeat = repeat.upper()
+    if repeat == "YES":
         matrixMaker()
     else:
-        break
+        exit()
 
 #run the matrix maker function at the start of the app
 matrixMaker()
-
 
